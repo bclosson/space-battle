@@ -82,7 +82,11 @@ class AlienSpaceship {
                     // Log Alien and USS Assembly remaining hull value 
                     console.log('USS Assembly ',this.friendly.hull, 'Alien Ship: ', alienFleet[i].hull);
                     }
-                        prompt(`You Have Defeated ${alienFleet[i].name}`, "To continue press OK, To quit press Cancel");
+                        
+                        const gameTime = prompt(`You Have Defeated ${alienFleet[i].name}`, "To continue press OK, To quit press Cancel")
+                        if (gameTime === null || gameTime === '' || gameTime === undefined) {
+                            break;
+                        }
                         if (alienFleet[i].hull > 0 && this.friendly.hull <= 0) {
                             console.log("You Have Been Defeated By The Alien Fleet!");
                         } else {
